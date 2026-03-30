@@ -1,0 +1,17 @@
+# Termux & Shell history
+.bash_history
+.bash_logout
+
+# Python files
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Environment variables (Where you should keep API keys)
+.env
+
+# OS files
+.DS_Store
+
