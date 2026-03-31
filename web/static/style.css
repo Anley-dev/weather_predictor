@@ -1,35 +1,108 @@
+/* 1. Make the main body a column so things stack */
 body {
-  margin: 0;
-  background: #121212;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Arial;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .app {
   background: #212121;
   padding: 20px;
   border-radius: 12px;
-  width: 300px;
+  width: 320px;
   text-align: center;
+}
+
+.desc {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #bbb;
 }
 
 input, button {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
   border-radius: 8px;
   border: none;
 }
 
-button {
-  background: #2563eb;
-  color: white;
+input {
+  margin-bottom: 5px;
 }
 
-#result {
-  margin-top: 15px;
+input:focus {
+  outline: none;
+  border: 2px solid #2563eb;
 }
+
+button {
+  margin-top: 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+}
+
+.result-box {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #00ffcc;
+}
+.history-container {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+}
+
+#history-list li {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* 2. Ensure the container and history take full width but don't overlap */
+.container, .history-container {
+    width: 100%;
+    max-width: 400px; /* Limits width so it doesn't look stretched */
+    margin-bottom: 20px;
+}
+
+/* 3. Add the Glassmorphism effect to the History box too */
+.history-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+

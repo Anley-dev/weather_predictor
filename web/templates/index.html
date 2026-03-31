@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ML Weather Predictor</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Weather Prediction System</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <div class="app">
-        <h2>ML Weather Predictor</h2>
-        <div class="input-group">
-            <input type="number" id="humidity" placeholder="Humidity (%)">
-            <input type="number" id="pressure" placeholder="Pressure (hPa)">
-            <input type="number" id="wind" placeholder="Wind Speed (km/h)">
-        </div>
-        <button onclick="predict()">Predict Temperature</button>
-        <div id="result">---</div>
+  <div class="app">
+    <h2>ML Weather Prediction System</h2>
+
+    <p class="desc">
+      Predict temperature using humidity, pressure, and wind speed.
+    </p>
+
+    <div class="input-group">
+
+      <label>Humidity (%)</label>
+      <input type="number" id="humidity" placeholder="e.g. 60">
+
+      <label>Pressure (hPa)</label>
+      <input type="number" id="pressure" placeholder="e.g. 1025">
+
+      <label>Wind Speed (km/h)</label>
+      <input type="number" id="wind" placeholder="e.g. 5">
+
     </div>
-    <script src="/static/app.js"></script>
+
+    <button onclick="predict()">Predict Temperature</button>
+
+    <div id="result" class="result-box">
+      Enter values and predict
+    </div>
+  </div>
+<div class="history-container">
+    <h3>Recent Learning History</h3>
+    <ul id="history-list">
+        <li>No data yet...</li>
+    </ul>
+</div>
+
+  <script src="/static/app.js"></script>
 </body>
 </html>
-
